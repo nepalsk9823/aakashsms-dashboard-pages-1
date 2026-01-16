@@ -108,6 +108,12 @@
   <!-- AdminLTE for demo purposes -->
   <script src="https://aakashsms-pvt.s3.ap-south-1.amazonaws.com/admin/dist/js/demo.js"></script>
 
+  <!-- prabin added plugins -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css">
+
+
+
   <script>
     $(document).ready(function () {
 
@@ -582,10 +588,12 @@
                   <div class="col-sm-6">
                     <div class="wrapper-rt pull-right">
                       <ol class="breadcrumb">
-                        <li><a href="https://stage.aakashsms.com/user/dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
+                        <li><a href="https://stage.aakashsms.com/user/dashboard"><i class="fa fa-dashboard"></i>
+                            Home</a></li>
                         <li>Campaign</li>
-                        <li class="active">SMS Campaign</li>
-                     </ol>
+                        <li>SMS Campaign</li>
+                        <li class="active">Create Campaign</li>
+                      </ol>
                     </div>
                   </div>
                 </div>
@@ -594,370 +602,210 @@
           </div>
         </div>
 
-        <div class="campaign-segment" id="campaignSegment">
-          <div class="campaign-segment-left">
-            <div class="campaign-segment-left-head" id="campaignSegmentHead">
-              <form action="#" class="d-flex align-items-center justify-content-between" style="margin-top: 10px;"
-                autocomplete="off">
-                <div class="input-group">
-                  <select style="height: 50%;" required="" id="network" name="" class="form-control">
-                    <option value="all">All</option>
-                    <option value="static">Static</option>
-                    <option value="dynamic">Dynamic</option>
-                  </select>
-                </div>
-                <a href="start_campaign.html" class="btn btn-sm btn-success campaign-new-btn" id="">New</a>
-              </form>
-            </div>
-            <div class="campaign-segment-left-body">
-              <div class="campaign-segment-list">
-                <div class="campaign-segment-item">
-                  <div class="campaign-segment-item-head d-flex align-items-center justify-content-between">
-                    <h5 class="campaign-item-ttl">Children Vaccine Campaign</h5>
-                    <span class="campaign-item-date">26 Dec, 5:20pm</span>
+        <div class="campaign-create-segment" id="campaign-createCreateSegment">
+          <div class="campaign-create-segment-left">
+            <div class="campaign-create-block-group">
+              <div class="campaign-create-block">
+                <h3 class="campaign-create-block-ttl">Campaign Details</h3>
+                <div class="form-group row">
+                  <label for="" class="col-sm-2 col-form-label">Campaign Name</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="" value="">
                   </div>
-                  <div class="campaign-item-msg">Children vaccine is going to get orgainized on 24th March, 2025</div>
                 </div>
-                <div class="campaign-segment-item">
-                  <div class="campaign-segment-item-head d-flex align-items-center justify-content-between">
-                    <h5 class="campaign-item-ttl">Children Vaccine Campaign</h5>
-                    <span class="campaign-item-date">26 Dec, 5:20pm</span>
+                <div class="form-group row">
+                  <label for="" class="col-sm-2 col-form-label">SMS Content Type</label>
+                  <div class="col-sm-10">
+                    <ul class="nav nav-pills mb-3 campaign-segment-tab" id="pills-tab-campaignCreate" role="tablist">
+                      <li class="nav-item">
+                        <a class="nav-link active" id="pills-campaign-static-tab" data-toggle="pill"
+                          href="#pills-campaign-static" role="tab" aria-controls="pills-campaign-static"
+                          aria-selected="true">Static</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" id="pills-campaign-dynamic-tab" data-toggle="pill"
+                          href="#pills-campaign-dynamic" role="tab" aria-controls="pills-campaign-dynamic"
+                          aria-selected="false">Dynamic</a>
+                      </li>
+                    </ul>
                   </div>
-                  <div class="campaign-item-msg">Children vaccine is going to get orgainized on 24th March, 2025</div>
-                </div>
-                <div class="campaign-segment-item">
-                  <div class="campaign-segment-item-head d-flex align-items-center justify-content-between">
-                    <h5 class="campaign-item-ttl">Children Vaccine Campaign</h5>
-                    <span class="campaign-item-date">26 Dec, 5:20pm</span>
-                  </div>
-                  <div class="campaign-item-msg">Children vaccine is going to get orgainized on 24th March, 2025</div>
-                </div>
-                <div class="campaign-segment-item">
-                  <div class="campaign-segment-item-head d-flex align-items-center justify-content-between">
-                    <h5 class="campaign-item-ttl">Children Vaccine Campaign</h5>
-                    <span class="campaign-item-date">26 Dec, 5:20pm</span>
-                  </div>
-                  <div class="campaign-item-msg">Children vaccine is going to get orgainized on 24th March, 2025</div>
-                </div>
-                <div class="campaign-segment-item">
-                  <div class="campaign-segment-item-head d-flex align-items-center justify-content-between">
-                    <h5 class="campaign-item-ttl">Children Vaccine Campaign</h5>
-                    <span class="campaign-item-date">26 Dec, 5:20pm</span>
-                  </div>
-                  <div class="campaign-item-msg">Children vaccine is going to get orgainized on 24th March, 2025</div>
-                </div>
-                <div class="campaign-segment-item">
-                  <div class="campaign-segment-item-head d-flex align-items-center justify-content-between">
-                    <h5 class="campaign-item-ttl">Children Vaccine Campaign</h5>
-                    <span class="campaign-item-date">26 Dec, 5:20pm</span>
-                  </div>
-                  <div class="campaign-item-msg">Children vaccine is going to get orgainized on 24th March, 2025</div>
-                </div>
-                <div class="campaign-segment-item">
-                  <div class="campaign-segment-item-head d-flex align-items-center justify-content-between">
-                    <h5 class="campaign-item-ttl">Children Vaccine Campaign</h5>
-                    <span class="campaign-item-date">26 Dec, 5:20pm</span>
-                  </div>
-                  <div class="campaign-item-msg">Children vaccine is going to get orgainized on 24th March, 2025</div>
-                </div>
-                <div class="campaign-segment-item">
-                  <div class="campaign-segment-item-head d-flex align-items-center justify-content-between">
-                    <h5 class="campaign-item-ttl">Children Vaccine Campaign</h5>
-                    <span class="campaign-item-date">26 Dec, 5:20pm</span>
-                  </div>
-                  <div class="campaign-item-msg">Children vaccine is going to get orgainized on 24th March, 2025</div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div class="campaign-segment-right">
-            <!-- initial screen -->
-            <div class="campaign-segment-initial d-flex flex-column align-items-center text-center">
-              <img src="images/campaign_preview_image.png" alt="" />
-              <div class="campaign-segment-initial-content">
-                <h3 class="campaign-segment-initial-ttl">Use Campaign to text group of people</h3>
-                <p class="campaign-segment-initial-msg">Send a message to a list of subscribers, big or small, all at
-                  once. Only you can see replies. They'll show up in your inbox.</p>
+              <div class="campaign-create-block">
+                <div class="tab-content" id="pills-tab-campaignCreateContent">
+                  <div class="tab-pane fade active" id="pills-campaign-static" role="tabpanel"
+                    aria-labelledby="pills-campaign-static-tab">
+                    <h3 class="campaign-create-block-ttl">Message Content</h3>
+                    <ul class="nav nav-pills mb-3 campaign-segment-tab" id="pills-tab-campaignMsgType" role="tablist">
+                      <li class="nav-item">
+                        <a class="nav-link active" id="pills-campaign-msg-eng-tab" data-toggle="pill"
+                          href="#pills-campaign-msg-eng" role="tab" aria-controls="pills-campaign-msg-eng"
+                          aria-selected="true">English</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" id="pills-campaign-msg-nep-tab" data-toggle="pill"
+                          href="#pills-campaign-msg-nep" role="tab" aria-controls="pills-campaign-msg-nep"
+                          aria-selected="false">Unicode (नेपाली)</a>
+                      </li>
+                    </ul>
+                    <div class="message-content-form">
+                      <div class="message-elems-group">
+                        <div class="message-toolbar">
+                          <button type="button" class="btn btn-icon">
+                            <img src="images/icon_emoji_smile.svg" alt="" />
+                          </button>
+                          <button type="button" class="btn btn-icon"><i class="fa fa-file"></i></button>
+                          <button type="button" class="btn btn-icon"><i class="fa fa-link"></i></button>
+                        </div>
+                        <div class="tab-content" id="pills-tab-campaignMsgTypeContent">
+                          <div class="tab-pane fade active" id="pills-campaign-msg-eng" role="tabpanel"
+                            aria-labelledby="pills-campaign-msg-eng-tab">
+                            <textarea rows="4" placeholder="Type your message here" class="form-control"></textarea>
+                          </div>
+                          <div class="tab-pane fade" id="pills-campaign-msg-nep" role="tabpanel"
+                            aria-labelledby="pills-campaign-msg-nep-tab">
+                            <textarea rows="4" placeholder="यहाँ सन्देश टाइप गर्नुहोस्..."
+                              class="form-control"></textarea>
+                          </div>
+                        </div>
+                        <div class="message-metadata d-flex align-items-center justify-content-between">
+                          <span class="message-metadata-total">Per SMS: 160</span>
+                          <span class="message-metadata-chars">Characters: 0</span>
+                        </div>
+                      </div>
+                      <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="">
+                        <label class="form-check-label" for="">&nbsp;Append your tagline</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="pills-campaign-dynamic" role="tabpanel"
+                    aria-labelledby="pills-campaign-dynamic-tab">
+                    <h3 class="campaign-create-block-ttl">Recipient Details</h3>
+                  </div>
+                </div>
               </div>
-              <a href="start_campaign.html" class="btn btn-deep-saffron">
-                <i class="fa fa-download"></i>
-                Start a Campaign
-              </a>
-            </div>
 
-            <div class="campaign-segment-msg-details">
-              <ul class="nav nav-pills mb-3 campaign-segment-tab" id="pills-tab-campaign" role="tablist">
-                <li class="nav-item">
-                  <a class="nav-link active" id="pills-msg-report-tab" data-toggle="pill" href="#pills-msg-report"
-                    role="tab" aria-controls="pills-msg-report" aria-selected="true">Messaging Report</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" id="pills-camp-report-tab" data-toggle="pill" href="#pills-camp-report" role="tab"
-                    aria-controls="pills-camp-report" aria-selected="false">Campaign Report</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" id="pills-markt-report-tab" data-toggle="pill" href="#pills-markt-report"
-                    role="tab" aria-controls="pills-markt-report" aria-selected="false">Marketing Report</a>
-                </li>
-              </ul>
-              <div class="tab-content" id="pills-tab-campaignContent">
-                <div class="tab-pane fade active" id="pills-msg-report" role="tabpanel"
-                  aria-labelledby="pills-msg-report-tab">
-                  <div class="msg-report-wrapper">
-                    <div class="msg-report-intro">
-                      <div class="msg-report-ttl">Children Voice Campaign</div>
-                      <div class="msg-report-status">Sent</div>
-                    </div>
-                    <div class="msg-report-details-block">
-                      <div class="msg-report-details-head d-flex align-items-center justify-content-start">
-                        <span class="msg-report-details-icon"><i class="fa fa-calendar"></i></span>
-                        <span class="msg-report-details-ttl">Delivery Details</span>
-                      </div>
-                      <div class="msg-report-details-body">
-                        <div class="details-list-group">
-                          <div class="details-list-item">
-                            <span class="details-list-item-icon">
-                              <i class="fa fa-users"></i>
-                            </span>
-                            <div class="details-list-item-info">
-                              <p class="details-list-item-label mb-0">Sent date</p>
-                              <span class="details-list-item-val">26 December 2025</span>
-                            </div>
-                          </div>
-                          <div class="details-list-item">
-                            <span class="details-list-item-icon">
-                              <i class="fa fa-clock-o"></i>
-                            </span>
-                            <div class="details-list-item-info">
-                              <p class="details-list-item-label mb-0">Sent Time</p>
-                              <span class="details-list-item-val">11:35:15</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+              <div class="campaign-create-block">
+                <h3 class="campaign-create-block-ttl">Marketing Campaign</h3>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="">
+                  <label class="form-check-label" for="">&nbsp;Enable Marketing Link</label>
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-12">
+                    <input type="text" class="form-control" placeholder="Enter Marketing Link" id="" value="">
+                  </div>
+                </div>
+              </div>
 
-                    <div class="msg-report-details-block">
-                      <div class="msg-report-details-head d-flex align-items-center justify-content-start">
-                        <span class="msg-report-details-ttl">Delivery Report</span>
-                      </div>
-                      <div class="msg-report-details-body">
-                        <div class="details-card-group">
-                          <div class="details-card-item success">
-                            <div class="details-card-item-info d-flex align-items-center justify-content-between">
-                              <p class="details-card-item-label mb-0">Delivered</p>
-                              <span class="details-card-item-val">2</span>
-                            </div>
-                          </div>
-                          <div class="details-card-item error">
-                            <div class="details-card-item-info d-flex align-items-center justify-content-between">
-                              <p class="details-card-item-label mb-0">Failed</p>
-                              <span class="details-card-item-val">0</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+              <div class="campaign-create-block">
+                <h3 class="campaign-create-block-ttl">Recipient & Sender Details</h3>
+                <div class="form-group row">
+                  <label for="" class="col-sm-2 col-form-label">To*</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" data-role="tagsinput" id="phoneTags"
+                      placeholder="Enter phone number (e.g., 9765355259) - Press Enter, comma, space, or tab to add"
+                      value="">
+                    <small id="phoneTagsError" class="text-danger d-none">
+                      Only valid 10-digit numbers are allowed
+                    </small>
+                    <div id="recipientCount" class="recipient-count d-none">
+                      0 contacts
                     </div>
-
-                    <div class="msg-report-details-block">
-                      <div class="msg-report-details-head d-flex align-items-center justify-content-start">
-                        <span class="msg-report-details-icon"><i class="fa fa-users"></i></span>
-                        <span class="msg-report-details-ttl">Sending Details</span>
-                      </div>
-                      <div class="msg-report-details-body">
-                        <div class="details-list-group">
-                          <div class="details-list-item">
-                            <span class="details-list-item-icon">
-                              <i class="fa fa-users"></i>
-                            </span>
-                            <div class="details-list-item-info">
-                              <p class="details-list-item-label mb-0">Contact Lists</p>
-                              <span class="details-list-item-val">New_list</span>
-                            </div>
-                          </div>
-                          <div class="details-list-item">
-                            <span class="details-list-item-icon">
-                              <i class="fa fa-signal"></i>
-                            </span>
-                            <div class="details-list-item-info">
-                              <p class="details-list-item-label mb-0">Sender ID</p>
-                              <span class="details-list-item-val">A12TCjk</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="msg-report-details-block est-credit-block">
-                      <div class="msg-report-details-head d-flex align-items-center justify-content-start">
-                        <span class="msg-report-details-ttl">Estimated Credits
-                        </span>
-                      </div>
-                      <div class="msg-report-details-body">
-                        <div class="details-list-group">
-                          <div class="details-list-item">
-                            <div class="details-list-item-info">
-                              <p class="details-list-item-label mb-0">Total Contacts</p>
-                              <span class="details-list-item-val lg-value">2</span>
-                            </div>
-                          </div>
-                          <div class="details-list-item">
-                            <div class="details-list-item-info">
-                              <p class="details-list-item-label mb-0">Credits</p>
-                              <span class="details-list-item-val lg-value">966.00</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="msg-report-details-block msg-preview-block">
-                      <div class="msg-report-details-head d-flex align-items-center justify-content-start">
-                        <span class="msg-report-details-ttl">Message Preview
-                        </span>
-                      </div>
-                      <div class="msg-report-details-body">
-                        <div class="details-list-item">
-                          <div class="details-list-item-info">
-                            <p class="details-list-item-label mb-0">SMS message</p>
-                            <div class="details-list-item-longtext">
-                              This is a dummy message used for testing and preview purposes only.
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="msg-report-details-block detailed-rpt-block">
-                      <div class="msg-report-details-head d-flex align-items-center justify-content-start">
-                        <span class="msg-report-details-icon"><i class="fa fa-file"></i></span>
-                        <span class="msg-report-details-ttl">Detailed Report
-                        </span>
-                      </div>
-                      <div class="msg-report-details-body d-flex align-items-start justify-content-between">
-                        <div class="details-list-item">
-                          <span class="details-list-item-icon">
-                            <i class="fa fa-file"></i>
-                          </span>
-                          <div class="details-list-item-info">
-                            <p class="details-list-item-label mb-0">campaign-report.csv</p>
-                            <span class="details-list-item-val">Download report to view delivery by each contact.</span>
-                          </div>
-                        </div>
-                        <button type="button" class="btn btn-deep-saffron">
-                          <i class="fa fa-download"></i>
-                          Download
+                    <div class="contact-type-group d-flex align-items-center">
+                      <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle d-inline-flex align-items-center" type="button"
+                          id="dropdownMenuContact" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                          <img class="icon-20" src="images/address-book-solid-full.svg" alt="" />
+                          <span class="dropdown-btn-text">Contact</span>
+                          <span class="caret"></span>
                         </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuContact">
+                          contact content here
+                        </ul>
+                      </div>
+                      <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle d-inline-flex align-items-center" type="button"
+                          id="dropdownMenuGroup" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                          <img class="icon-20" src="images/people-group-solid-full.svg" alt="" />
+                          <span class="dropdown-btn-text">Group</span>
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuGroup">
+                          contact content here
+                        </ul>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="tab-pane fade" id="pills-camp-report" role="tabpanel"
-                  aria-labelledby="pills-camp-report-tab">
-                  <div class="camp-report-wrapper">
-                    <div class="box-header">
-                      <form autocomplete="off" method="post" action="#" class="campaign-datatable-head">
-                        <div class="d-flex align-items-center justify-content-between campaign-datatable-head-wrapper">
-                          <div class="form-row d-flex campaign-datatable-head-left">
-                            <input class="form-control" type="text" name="search" id="" value=""
-                              placeholder="Search by Number, Network">
-                            <button class="btn btn-primary mr15" type="button" id="">Search</button>
-                          </div>
-                          <div class="d-flex align-items-center justify-content-end campaign-datatable-head-right">
-                            <select style="height: 50%;" required="" id="" name="" class="form-control">
-                              <option value="all">Filter</option>
-                              <option value="all">option 1</option>
-                              <option value="all">option 1</option>
-                            </select>
-                            <div class="input-group date" id="datepicker1">
-                              <input required="" type="text" id="start_date" name="start_date" placeholder="From"
-                                class="form-control" value="2026-01-01">
-                              <span class="input-group-addon" id="calendarIconAddon"><i
-                                  class="fa fa-calendar"></i></span>
-                            </div>
-                            <button type="button" class="btn btn-icon">
-                              <i class="fa fa-download"></i>
-                            </button>
-                          </div>
+                <div class="form-group row">
+                  <label for="" class="col-sm-2 col-form-label">Upload Numbers</label>
+                  <div class="col-sm-10">
+                    <div class="contact-upload-block">
+                      <!-- Hidden file input -->
+                      <input type="file" id="fileInput" accept=".csv" style="display: none;">
+                      <div class="contact-upload-block-left d-flex align-items-center">
+                        <div class="contact-upload-icon">
+                          <img class="icon-36" src="images/file-arrow-up-solid-full.svg" alt="" />
                         </div>
-                      </form>
-                    </div>
-
-                    <div class="box-body table-responsive" style="padding: 10px;">
-                      <table class="table contact-table table-striped table-bordered table-hover no-footer" id=""
-                        role="grid">
-                        <thead>
-                          <tr>
-                            <th>Receiver Number </th>
-                            <th>Network </th>
-                            <th>Message </th>
-                            <th>Credit</th>
-                            <th>Status</th>
-                            <th>Sent At</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>9861196500 </td>
-                            <td>ntc </td>
-                            <td>testing testing </td>
-                            <td>1.00 </td>
-                            <td>
-                              <span class="status-badge status-delivered">delivered</span>
-                            </td>
-                            <td>26/12/2025, 17:20:15</td>
-                          </tr>
-                          <tr>
-                            <td>9861196500 </td>
-                            <td>ntc </td>
-                            <td>testing testing </td>
-                            <td>1.00 </td>
-                            <td>
-                              <span class="status-badge status-delivered">delivered</span>
-                            </td>
-                            <td>26/12/2025, 17:20:15</td>
-                          </tr>
-                          <tr>
-                            <td>9861196500 </td>
-                            <td>ntc </td>
-                            <td>testing testing </td>
-                            <td>1.00 </td>
-                            <td>
-                              <span class="status-badge status-delivered">delivered</span>
-                            </td>
-                            <td>26/12/2025, 17:20:15</td>
-                          </tr>
-                          <tr>
-                            <td>9861196500 </td>
-                            <td>ntc </td>
-                            <td>testing testing </td>
-                            <td>1.00 </td>
-                            <td>
-                              <span class="status-badge status-delivered">delivered</span>
-                            </td>
-                            <td>26/12/2025, 17:20:15</td>
-                          </tr>
-                          <tr>
-                            <td>9861196500 </td>
-                            <td>ntc </td>
-                            <td>testing testing </td>
-                            <td>1.00 </td>
-                            <td>
-                              <span class="status-badge status-delivered">delivered</span>
-                            </td>
-                            <td>26/12/2025, 17:20:15</td>
-                          </tr>
-                        </tbody>
-                      </table>
+                        <div class="contact-upload-info d-flex flex-column">
+                          <span class="contact-upload-info-label">Upload Numbers</span>
+                          <span class="contact-upload-info-desc">CSV file with phone_number column</span>
+                        </div>
+                      </div>
+                      <button type="button" class="btn btn-deep-saffron btn-link" id="sampleBtn"> <i
+                          class="fa fa-download"></i>
+                        Sample</button>
                     </div>
                   </div>
                 </div>
-                <div class="tab-pane fade" id="pills-markt-report" role="tabpanel"
-                  aria-labelledby="pills-markt-report-tab">...</div>
+              </div>
+
+              <div class="campaign-create-block">
+                <h3 class="campaign-create-block-ttl">Campaign Scheduling</h3>
+                <ul class="nav nav-pills mb-3 campaign-segment-tab" id="pills-tab-campaignSchedule" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" id="pills-campaign-immediate-tab" data-toggle="pill"
+                      href="#pills-campaign-immediate" role="tab" aria-controls="pills-campaign-immediate"
+                      aria-selected="true">Immediate</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="pills-campaign-scheduled-tab" data-toggle="pill"
+                      href="#pills-campaign-scheduled" role="tab" aria-controls="pills-campaign-scheduled"
+                      aria-selected="false">Scheduled</a>
+                  </li>
+                </ul>
+                <div class="tab-content" id="pills-tab-campaignScheduleContent">
+                  <div class="tab-pane fade active" id="pills-campaign-immediate" role="tabpanel"
+                    aria-labelledby="pills-campaign-immediate-tab">
+                    Nothing to show
+                  </div>
+                  <div class="tab-pane fade" id="pills-campaign-scheduled" role="tabpanel"
+                    aria-labelledby="pills-campaign-scheduled-tab">
+                    la jaa
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="campaign-create-segment-right">
+            <h3 class="msg-preview-screen-ttl">Message Preview</h3>
+            <div class="msg-preview-screen">
+              <div class="msg-preview-screen-head"></div>
+              <div class="msg-preview-screen-body">
+                <div class="msg-repview-screen-appbar d-flex align-items-center">
+                  <span class="appbar-back-btn d-inline-flex align-items-center justify-content-center">
+                    <i class="fa fa-chevron-left"></i>
+                  </span>
+                  <span class="appbar-sender-name text-center">Sender name</span>
+                </div>
+                <div class="msg-preview-screen-content" id="msgPreviewScreenContent">
+                </div>
               </div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
     <footer class="main-footer">
@@ -1154,21 +1002,136 @@
   <!--common modal end -->
 
   <!-- prabin added -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.min.js"></script>
+  <script src="https://unpkg.com/nepalify@0.5.0/umd/nepalify.production.min.js"></script>
+
   <script>
     $(document).ready(function () {
-      $('#pills-tab-campaign a:first').tab('show'); // activates the first tab
+      $('#pills-tab-campaignCreate a:first').tab('show'); // activates the first tab
+      $('#pills-tab-campaignMsgType a:first').tab('show'); // activates the first tab
+      $('#pills-tab-campaignSchedule a:first').tab('show'); // activates the first tab
 
-      $('.campaign-segment-item').on('click', function(){
-        // Toggle active state on left list
-        $('.campaign-segment-item').removeClass('active');
-        $(this).addClass('active');
+      $('#phoneTags').tagsinput({
+        trimValue: true,
+        confirmKeys: [13, 44] // Enter & comma
+      });
 
-        // Hide initial screen
-        $('.campaign-segment-initial').hide();
-        // Show message details
-        $('.campaign-segment-msg-details').show();
-      })
+      // BLOCK non-numeric input while typing
+      $('#phoneTags').on('keypress', function (e) {
+        if (!/[0-9,]/.test(String.fromCharCode(e.which))) {
+          e.preventDefault();
+        }
+      });
+
+      const $input = $('#phoneTags');
+      const $error = $('#phoneTagsError');
+      const $count = $('#recipientCount');
+
+      $input.tagsinput({
+        trimValue: true,
+        confirmKeys: [13, 44, 32, 9] // Enter, comma, space, tab
+      });
+
+      // Allow only numbers and comma while typing
+      $input.on('keypress', function (e) {
+        if (!/[0-9,]/.test(String.fromCharCode(e.which))) {
+          e.preventDefault();
+        }
+      });
+
+      // Validate before adding tag
+      $input.on('beforeItemAdd', function (event) {
+        const value = event.item.toString();
+
+        if (!/^\d{10}$/.test(value)) {
+          event.cancel = true;
+
+          // Show error message
+          $error.removeClass('d-none');
+
+          // Auto-hide after 3 seconds
+          clearTimeout(window.tagErrorTimeout);
+          window.tagErrorTimeout = setTimeout(() => {
+            $error.addClass('d-none');
+          }, 3000);
+        }
+      });
+
+      // Hide error when valid tag is added
+      $input.on('itemAdded itemRemoved', function () {
+        updateRecipientCount();
+        $error.addClass('d-none');
+      });
+
+      function updateRecipientCount() {
+        const count = $input.tagsinput('items').length;
+
+        if (count > 0) {
+          $count
+            .text(count + (count === 1 ? ' contact' : ' contacts'))
+            .removeClass('d-none');
+        } else {
+          $count.addClass('d-none');
+        }
+      }
+
+      // Trigger file input ONLY when label is clicked
+      $('.contact-upload-info-label').on('click', function (e) {
+        e.stopPropagation();
+        $('#fileInput').click();
+      });
+    });
+  </script>
+  <script>
+    $(document).ready(function () {
+      var $textarea = $('#pills-tab-campaignMsgTypeContent textarea');
+      var $metaChars = $('.message-metadata-chars');
+      var $preview = $('#msgPreviewScreenContent');
+
+      // Store the raw Romanized input
+      var romanizedText = '';
+
+      function updateMessage(isNepaliMode) {
+        var displayText = romanizedText;
+
+        if (isNepaliMode) {
+          displayText = nepalify.format(romanizedText); // convert to Nepali Unicode
+          $textarea.val(displayText); // show Nepali in textarea
+        } else {
+          $textarea.val(romanizedText); // show original Romanized text
+        }
+
+        $metaChars.text('Characters: ' + displayText.length);
+        $preview.text(displayText);
+      }
+
+      // Input event
+      $textarea.on('input', function () {
+        // Always store the raw input from user
+        romanizedText = $(this).val();
+        var isNepaliMode = $('#pills-campaign-msg-nep').hasClass('active');
+        updateMessage(isNepaliMode);
+      });
+
+      // Tab switch event
+      $('a[data-toggle="pill"]').on('shown.bs.tab', function (e) {
+        var isNepaliMode = $(e.target).attr('href').includes('nep');
+
+        // Update placeholder
+        $textarea.attr(
+          'placeholder',
+          isNepaliMode ? 'यहाँ सन्देश टाइप गर्नुहोस्...' : 'Type your message here...'
+        );
+
+        // Update textarea and preview
+        updateMessage(isNepaliMode);
+      });
+
+      // Initialize
+      updateMessage(false);
+
     });
   </script>
 </body>
+
 </html>
