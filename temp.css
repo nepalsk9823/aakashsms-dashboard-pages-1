@@ -38,6 +38,11 @@
   font-size: 12px;
   opacity: 0.8;
   font-weight: 500;
+  overflow: hidden;
+  display: -webkit-box; 
+  -webkit-line-clamp: 2; 
+  line-clamp: 2; 
+  -webkit-box-orient: vertical; /
 }
 .campaign-segment-item {
   padding: 16px;
@@ -79,7 +84,8 @@
   border-radius: 4px;
 }
 .campaign-segment-tab .nav-item.active .nav-link {
-  background: #f99000;
+  /* background: #f99000; */
+  background: #272b35;
   font-weight: 700;
   color: #fff;
   border: 0;
@@ -98,6 +104,7 @@
   padding: 4px 12px;
   border-radius: 4px;
   font-weight: 500;
+  font-size: 13px;
 }
 .msg-report-details-head {
   gap: 12px;
@@ -327,6 +334,7 @@
   display: grid;
   align-items: flex-start;
   gap: 20px;
+  margin-bottom: 24px;
 }
 .message-toolbar {
   display: flex;
@@ -361,6 +369,10 @@
 }
 .campaign-create-block .d-none {
   display: none;
+}
+.msg-report-details-body{
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 /* boostrap tags input */
@@ -419,6 +431,7 @@
   font-weight: 500;
   font-size: 15px;
   text-decoration: underline;
+  cursor: pointer;
 }
 .contact-upload-info-desc {
   font-size: 12px;
@@ -454,4 +467,121 @@
   margin-bottom: 20px;
   font-size: 20px;
   font-weight: 600;
+}
+#pills-tab-campaignCreate{
+  margin-bottom: 0;
+}
+
+@media(max-width: 1599.98px){
+  .campaign-segment{
+    gap: 16px;
+    grid-template-columns: 320px auto;
+  }
+}
+
+@media(max-width: 1399.98px){
+  .campaign-segment-tab .nav-item .nav-link{
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+  .campaign-segment{
+    gap: 16px;
+    grid-template-columns: 300px auto;
+  }
+  .msg-report-wrapper{
+    gap: 12px;
+  }
+}
+
+@media(max-width: 1199.98px){
+  .campaign-segment-right{
+    padding: 16px;
+  }
+  .campaign-create-segment {
+    grid-template-columns: 100%;
+  }
+}
+
+@media(max-width: 991.98px){
+  .campaign-segment{
+    grid-template-columns: 100%;
+  }
+  .campaign-segment-list{
+    max-height: 400px!important;
+  }
+}
+
+@media(max-width: 575.98px){
+  .campaign-segment-right{
+    border-radius: 16px;
+  }
+  .campaign-create-block{
+    padding: 18px;
+    border-radius: 16px;
+  }
+  .campaign-create-block-ttl{
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  .campaign-segment-tab{
+    margin-bottom: 20px;
+  }
+  .message-elems-group{
+    padding: 12px;
+  }
+  .campaign-create-block-group{
+    gap: 16px;
+  }
+  .campaign-segment-left-head {
+    padding: 12px;
+  }
+  .campaign-segment-item{
+    padding: 12px 12px 8px 12px;
+  }
+  .campaign-segment-item-head{
+    margin-bottom: 6px;
+  }
+  .campaign-segment-tab{
+    gap: 4px;
+    background: none;
+    padding: 0;
+  }
+  .msg-report-details-block{
+    padding: 12px;
+  }
+  .msg-report-details-head{
+    margin-bottom: 12px;
+  }
+  .details-card-item{
+    padding: 8px 16px;
+  }
+  .msg-report-details-ttl{
+    font-size: 14px;
+  }
+  .details-list-item-longtext{
+    font-size: 13px;
+  }
+  .details-list-item-icon{
+    min-width: 28px;
+    height: 28px;
+    width: 28px;
+  }
+  .details-list-item-val{
+    font-size: 12px;
+  }
+  .details-list-item{
+    gap: 8px;
+  }
+  .details-list-group{
+    gap: 16px;
+  }
+  .details-list-item-label{
+    margin-bottom: 0!important;
+  }
+  .est-credit-block .msg-report-details-body{
+    padding: 12px;
+  }
+  .msg-report-details-icon{
+    font-size: 16px;
+  }
 }
