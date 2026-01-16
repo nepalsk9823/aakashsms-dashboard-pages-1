@@ -109,6 +109,9 @@
 .msg-report-details-head {
   gap: 12px;
 }
+.msg-report-details-head:has(+ .msg-report-details-lead){
+  margin-bottom: 4px;
+}
 .msg-report-details-ttl {
   font-weight: 600;
   font-size: 16px;
@@ -152,7 +155,7 @@
   font-size: 14px;
 }
 .msg-report-details-head {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 .msg-report-details-icon {
   font-size: 18px;
@@ -376,6 +379,10 @@
 }
 
 /* boostrap tags input */
+.bootstrap-tagsinput{
+  min-height: 58px!important;
+  box-shadow: none!important;
+}
 .bootstrap-tagsinput input {
   width: 100% !important;
 }
@@ -388,8 +395,15 @@
 .bootstrap-tagsinput .tag [data-role="remove"] {
   opacity: 0.4;
 }
+.bootstrap-tagsinput input{
+  padding: 6px 12px!important;
+}
+.bootstrap-tagsinput input:focus{
+  background: rgba(0, 0, 0, 0.02)!important;
+  border-radius: 4px;
+}
 .recipient-count {
-  font-weight: 600;
+  font-weight: 500;
   font-size: 12px;
   margin-top: 12px;
   opacity: 0.7;
@@ -410,6 +424,7 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   background: none;
+  padding: 8px 10px;
 }
 .contact-type-group {
   gap: 8px;
@@ -470,6 +485,37 @@
 }
 #pills-tab-campaignCreate{
   margin-bottom: 0;
+}
+.mrkt-report-wrapper .asms-ar-title{
+  font-family: 'Open Sans'!important;
+}
+.asms-ar-metrics-item{
+  background: #F5F5F5;
+  padding: 12px;
+  border-radius: 8px;
+}
+.asms-ar-metrics-item-title{
+  font-weight: 500;
+  color: #757575;
+}
+.asms-ar-metrics-item-value{
+  font-size: 16px;
+  font-weight: 600;
+}
+.text-dark-cyan{
+  color: #108c7f;
+}
+.asms-ar-metrics{
+  display: grid;
+  align-items: flex-start;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.asms-ar-msg-overview,
+.asms-ar-user-summary{
+  border: 1px solid #d2d6de;
+  border-radius: 12px;
+  padding: 20px;
 }
 
 @media(max-width: 1599.98px){

@@ -731,7 +731,7 @@
                     <small id="phoneTagsError" class="text-danger d-none">
                       Only valid 10-digit numbers are allowed
                     </small>
-                    <div id="recipientCount" class="recipient-count d-none">
+                    <div id="recipientCount" class="recipient-count">
                       0 contacts
                     </div>
                     <div class="contact-type-group d-flex align-items-center">
@@ -804,7 +804,27 @@
                   </div>
                   <div class="tab-pane fade" id="pills-campaign-scheduled" role="tabpanel"
                     aria-labelledby="pills-campaign-scheduled-tab">
-                    la jaa
+                    <div id="scheduleMessage" class="mt10">
+                      <label for="" class="col-form-label">Start Date & Time</label>
+                      <div class="row compose-schedule-form-elems">
+                        <div class="col-sm-6 compose-schedule-form-elem">
+                          <div class="input-group date" id="datepicker2">
+                            <input type="text" id="scheduled_date" name="date" placeholder="Date" class="form-control"
+                              value="">
+                            <span class="input-group-addon" id="secondCalendarIconAddon"><i
+                                class="fa fa-calendar"></i></span>
+                          </div>
+                        </div>
+                        <div class="col-sm-6 compose-schedule-form-elem">
+                          <div class="input-group">
+                            <input type="text" name="time" class="form-control timepicker" id="timepicker1"
+                              placeholder="Time" value="">
+                            <span class="input-group-addon" id="secondCalendarIconAddon"><i
+                                class="fa fa-clock-o"></i></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1049,7 +1069,7 @@
           $('.campaign-create-recipient-sender-block').show(); // show otherwise
         }
       }
- 
+
       // Run on page load
       toggleRecipientSenderBlock();
 
@@ -1103,7 +1123,6 @@
       // Hide error when valid tag is added
       $input.on('itemAdded itemRemoved', function () {
         updateRecipientCount();
-        $error.addClass('d-none');
       });
 
       function updateRecipientCount() {
@@ -1112,9 +1131,8 @@
         if (count > 0) {
           $count
             .text(count + (count === 1 ? ' contact' : ' contacts'))
-            .removeClass('d-none');
         } else {
-          $count.addClass('d-none');
+          $count.text('0 contacts');
         }
       }
 
