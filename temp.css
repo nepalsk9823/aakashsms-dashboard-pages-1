@@ -104,9 +104,21 @@
   font-weight: 500;
   font-size: 13px;
 }
-.msg-report-status.status-sent{
+.msg-report-status.status-success{
   background: rgba(16, 140, 127, 0.2);
   color: #108c7f;
+}
+.msg-report-status.status-warning{
+  background: rgba(255, 145, 1, 0.2);
+  color: #ff9101;
+}
+.msg-report-status.status-info{
+  background: rgba(51, 114, 172, 0.2);
+  color: #3372ac;
+}
+.msg-report-status.status-danger{
+  background: rgba(237, 47, 47, 0.2);
+  color: #ed2f2f;
 }
 .msg-report-details-head {
   gap: 12px;
@@ -175,7 +187,7 @@
   background: rgba(16, 140, 127, 0.2);
 }
 .details-card-item.error {
-  background: #fee2e2;
+  background: rgba(254, 226, 226, 0.2);
 }
 .details-card-item.pending{
   background: rgba(255, 145, 1, 0.2);
@@ -189,12 +201,12 @@
   gap: 8px;
 }
 .details-card-item-label {
-  font-weight: 600;
+  font-weight: 500;
 }
 .details-card-item-val,
 .details-list-item-val.lg-value {
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 600;
 }
 .est-credit-block .msg-report-details-body {
   background: #f6f6f6;
@@ -705,6 +717,7 @@
 .jb-emoji-close{
   font-size: 24px;
   opacity: 0.7;
+  cursor: pointer;
 }
 .jb-emoji{
   box-shadow: none!important;
