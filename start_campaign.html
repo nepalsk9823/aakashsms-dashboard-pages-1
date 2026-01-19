@@ -1237,7 +1237,12 @@
 
         // Insert emoji at cursor in active textarea
         var $activeTextarea = $('#pills-tab-campaignMsgTypeContent .tab-pane.active textarea');
-        if ($activeTextarea.length) insertAtCursor($activeTextarea[0], emojiChar);
+        if ($activeTextarea.length) {
+          var textarea = $activeTextarea[0];
+          // ✅ FIX: focus FIRST
+          textarea.focus();
+          insertAtCursor(textarea, emojiChar);
+        }
         // Close emoji picker immediately after selecting an emoji
         $pickerContainer.hide();
       });
@@ -1263,21 +1268,22 @@
       // Helper: insert emoji at cursor
       function insertAtCursor(myField, myValue) {
         if (document.selection) {
-          myField.focus();
           var sel = document.selection.createRange();
           sel.text = myValue;
-        } else if (myField.selectionStart || myField.selectionStart === 0) {
+        } else if (myField.selectionStart !== undefined) {
           var startPos = myField.selectionStart;
           var endPos = myField.selectionEnd;
-          myField.value = myField.value.substring(0, startPos)
-            + myValue
-            + myField.value.substring(endPos, myField.value.length);
-          myField.selectionStart = startPos + myValue.length;
-          myField.selectionEnd = startPos + myValue.length;
+
+          myField.value =
+            myField.value.substring(0, startPos) +
+            myValue +
+            myField.value.substring(endPos);
+
+          myField.selectionStart = myField.selectionEnd =
+            startPos + myValue.length;
         } else {
           myField.value += myValue;
         }
-        myField.focus();
       }
 
     });
