@@ -111,8 +111,7 @@
   <!-- prabin added plugins -->
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css">
-
-
+  <link rel="stylesheet" href="emojis/jquery.jb-emoji.css" />
 
   <script>
     $(document).ready(function () {
@@ -651,9 +650,18 @@
                     <div class="message-content-form">
                       <div class="message-elems-group">
                         <div class="message-toolbar">
-                          <button type="button" class="btn btn-icon">
-                            <img src="images/icon_emoji_smile.svg" alt="" />
-                          </button>
+                          <div class="emoji-parent-wrapper">
+                            <button type="button" class="btn btn-icon" id="openEmojiBox">
+                              <img src="images/icon_emoji_smile.svg" alt="" />
+                            </button>
+                            <div class="jb-emoji-container">
+                              <div class="jb-emoji-head d-flex align-items-center justify-content-between">
+                                <h4 class="jb-emoji-title">Emoji Picker</h4>
+                                <span class="jb-emoji-close">&times;</span>
+                              </div>
+                              <div class="jb-emoji"></div>
+                            </div>
+                          </div>
                           <button type="button" class="btn btn-icon" id="openInsertTemplateModal"><i
                               class="fa fa-file"></i></button>
                           <button type="button" class="btn btn-icon" id="openInsertUrlModal"><i
@@ -1003,6 +1011,8 @@
   <!-- prabin added -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.min.js"></script>
   <script src="https://unpkg.com/nepalify@0.5.0/umd/nepalify.production.min.js"></script>
+  <script src="emojis/jquery.jb-emoji.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emojione@3.1.2/lib/js/emojione.min.js"></script>
 
   <script>
     $(document).ready(function () {
@@ -1211,6 +1221,65 @@
           $(this).toggle($(this).text().toLowerCase().indexOf(keyword) !== -1);
         });
       });
+    });
+
+    $(document).ready(function () {
+      var $pickerContainer = $('.jb-emoji-container');
+      var $emojiDiv = $('.jb-emoji');
+
+      // Initialize jbEmoji
+      $emojiDiv.jbEmoji(function () {
+        var emojiValue = $(this).attr('data-active-emoji-unicode');
+        if (!emojiValue) return;
+
+        // Convert hex code points to actual Unicode emoji
+        var emojiChar = emojiValue.split(' ').map(cp => String.fromCodePoint(parseInt(cp, 16))).join('');
+
+        // Insert emoji at cursor in active textarea
+        var $activeTextarea = $('#pills-tab-campaignMsgTypeContent .tab-pane.active textarea');
+        if ($activeTextarea.length) insertAtCursor($activeTextarea[0], emojiChar);
+        // Close emoji picker immediately after selecting an emoji
+        $pickerContainer.hide();
+      });
+
+      // Toggle emoji picker on button click
+      $('#openEmojiBox').on('click', function (e) {
+        e.stopPropagation();
+        $pickerContainer.toggle(); // show/hide
+      });
+
+      // Close icon
+      $('.jb-emoji-close').on('click', function () {
+        $pickerContainer.hide();
+      });
+
+      // Click outside closes the picker
+      $(document).on('click', function (e) {
+        if (!$(e.target).closest('.jb-emoji-container, #openEmojiBox').length) {
+          $pickerContainer.hide();
+        }
+      });
+
+      // Helper: insert emoji at cursor
+      function insertAtCursor(myField, myValue) {
+        if (document.selection) {
+          myField.focus();
+          var sel = document.selection.createRange();
+          sel.text = myValue;
+        } else if (myField.selectionStart || myField.selectionStart === 0) {
+          var startPos = myField.selectionStart;
+          var endPos = myField.selectionEnd;
+          myField.value = myField.value.substring(0, startPos)
+            + myValue
+            + myField.value.substring(endPos, myField.value.length);
+          myField.selectionStart = startPos + myValue.length;
+          myField.selectionEnd = startPos + myValue.length;
+        } else {
+          myField.value += myValue;
+        }
+        myField.focus();
+      }
+
     });
 
   </script>
