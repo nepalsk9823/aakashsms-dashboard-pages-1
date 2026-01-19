@@ -654,8 +654,10 @@
                           <button type="button" class="btn btn-icon">
                             <img src="images/icon_emoji_smile.svg" alt="" />
                           </button>
-                          <button type="button" class="btn btn-icon"><i class="fa fa-file"></i></button>
-                          <button type="button" class="btn btn-icon"><i class="fa fa-link"></i></button>
+                          <button type="button" class="btn btn-icon" id="openInsertTemplateModal"><i
+                              class="fa fa-file"></i></button>
+                          <button type="button" class="btn btn-icon" id="openInsertUrlModal"><i
+                              class="fa fa-link"></i></button>
                         </div>
                         <div class="tab-content" id="pills-tab-campaignMsgTypeContent">
                           <div class="tab-pane fade active" id="pills-campaign-msg-eng" role="tabpanel"
@@ -858,192 +860,145 @@
   </div>
   <script src="https://aakashsms-pvt.s3.ap-south-1.amazonaws.com/custom/js/bootstrap-tagsinput.min.js"></script>
   <script src="https://aakashsms-pvt.s3.ap-south-1.amazonaws.com/custom/js/typeahead.js"></script>
-
-
-  <script>
-    var js_base_url = "https://stage.aakashsms.com";
-    $.ajaxSetup({
-      headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-      }
-    });
-    $('.closeResponseMessageDiv').on('click', function () {
-      $('.responseMessageDiv').hide();
-    });
-  </script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
-
-
-
-
-  <script type="text/javascript">
-    $(document).ready(function () {
-
-      $(document).on('click', '#password90ChangedsubmitBtn', function () {
-
-        var v1_url = js_base_url + '/user/profile/change-password-ajax';
-        var data = $('form').serialize();
-        $.ajax({
-          type: 'post',
-          url: v1_url,
-          dataType: 'html',
-          data: data,
-
-          success: function (data1) {
-            // alert(data1)
-
-            if (data1 == 1) {
-              $('#commonModalForInformation').modal('hide');
-              $.toaster({
-                priority: 'success',
-                title: 'Success',
-                message: 'Successfully updated'
-              });
-              window.location.href = js_base_url + "/user/dashboard";
-
-            } else {
-              $.toaster({
-                priority: 'warning',
-                title: 'Warning',
-                message: data1
-              });
-            }
-
-
-          },
-          error: function (error) {
-            $.toaster({
-              priority: 'error',
-              title: 'Error',
-              message: error
-            });
-          }
-        });
-
-
-      });
-
-    })
-  </script>
-
   <script
     src="https://aakashsms-pvt.s3.ap-south-1.amazonaws.com/admin/plugins/datatables/jquery.dataTables.min.js"></script>
   <script
     src="https://aakashsms-pvt.s3.ap-south-1.amazonaws.com/admin/plugins/datatables/dataTables.bootstrap.min.js"></script>
-  <script>
-    $('#userDraftTable').DataTable();
-  </script>
 
+  <!-- Insert URL Modal -->
+  <div class="modal fade" id="insertUrlModal" data-backdrop="static">
+    <div class="modal-dialog">
+      <div class="modal-content">
 
-  <script>
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            <span>×</span>
+          </button>
+          <h4 class="modal-title">Insert URL</h4>
+        </div>
 
-    $(document).ready(function () {
-      $('#deleteAllContactsButton').on('click', function () {
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="campaignUrlInput">Enter URL</label>
+            <input type="text" id="campaignUrlInput" class="form-control" placeholder="https://example.com">
+          </div>
+        </div>
 
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">
+            Cancel
+          </button>
+          <button type="button" class="btn btn-primary" id="insertCampaignUrlBtn">
+            Insert URL
+          </button>
+        </div>
 
-        var result = confirm("Are you sure want to delete all contacts ?");
-        if (result) {
-          $.ajax({
-            type: 'post',
-            url: js_base_url + "/user/delete-all-contact",
-            dataType: 'html',
-            success: function (data) {
-
-
-
-              if (data.error) {
-                $.toaster({ priority: 'warning', title: 'Warning', message: data.message });
-
-
-              } else {
-                $.toaster({ priority: 'success', title: 'Success', message: 'Successfully Updated' });
-
-                location.reload()
-
-              }
-
-
-            },
-            error: function (error) {
-              console.log(error)
-            }
-          });
-        }
-      })
-    })
-
-  </script>
-
-  <script type="text/javascript">
-    $(document).ready(function () {
-      $('#sendsms').on('click', function () {
-        var ids = [];
-        $.each($(".select-all-contacts:checked"), function () {
-          ids.push($(this).val());
-        });
-        if (ids.length > 0) {
-          // alert(ids);
-          window.location.href = js_base_url + "/user/compose?contactIds=" + ids;
-        }
-
-      })
-
-
-    })
-  </script>
-  <script type="text/javascript">
-    $(document).ready(function () {
-      /*search*/
-      $("form").bind("keydown", function (e) {
-        if (e.keyCode === 13) { return false; }
-      });
-
-      $('#searchBtn').on('click', function () {
-
-        var searchWord = $('#searchInput').val();
-
-        if (searchWord) {
-          searchWord = searchWord
-        } else {
-          searchWord = "all";
-        }
-
-
-        if (searchWord == "all") {
-          window.location.href = js_base_url + "/user/contact";
-        } else {
-          window.location.href = js_base_url + "/user/contact-search/" + searchWord;
-        }
-      })
-    })
-  </script>
-
-
-  <!--common modal start -->
-  <div class="modal fade" id="commonModalForInformation" data-backdrop="static" style="display: none;">
+      </div>
+    </div>
+  </div>
+  <!-- /Insert URL Modal -->
+  <!-- Message Templates Modal -->
+  <div class="modal fade" id="insertTemplateModal" data-backdrop="static">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span></button>
-          <h4 class="modal-title"></h4>
+          <button type="button" class="close" data-dismiss="modal">
+            <span>×</span>
+          </button>
+          <h4 class="modal-title">Message Templates</h4>
         </div>
-        <div class="modal-body">
-          <strong>
-            <p></p>
-          </strong>
 
+        <div class="modal-body">
+          <!-- Search -->
+          <div class="form-group">
+            <input type="text" id="templateSearchInput" class="form-control" placeholder="Search templates...">
+          </div>
+
+          <!-- Templates List -->
+          <div class="msg-template-list">
+
+            <div class="msg-template-item"
+              data-message="Big News! We're offering an exclusive 25% discount on all orders this week. Use code SAVE25 at checkout! 🎁">
+              <h5 class="msg-template-title">Discount Offer</h5>
+              <p class="msg-template-desc">
+                Big News! We're offering an exclusive 25% discount on all orders this week. Use code SAVE25 at checkout!
+                🎁 But hurry...
+              </p>
+            </div>
+
+            <div class="msg-template-item"
+              data-message="Reminder: You have an appointment scheduled for tomorrow at 2:00 PM. Please reply YES to confirm or call us.">
+              <h5 class="msg-template-title">Appointment Reminder</h5>
+              <p class="msg-template-desc">
+                Reminder: You have an appointment scheduled for tomorrow at 2:00 PM. Please reply YES to confirm or call
+                us...
+              </p>
+            </div>
+
+            <div class="msg-template-item"
+              data-message="Your order #12345 has been confirmed and is being processed. Expected delivery: 3–5 business days.">
+              <h5 class="msg-template-title">Order Confirmation</h5>
+              <p class="msg-template-desc">
+                Your order #12345 has been confirmed and is being processed. Expected delivery: 3–5 business days. Track
+                your...
+              </p>
+            </div>
+            <div class="msg-template-item"
+              data-message="Your order #12345 has been confirmed and is being processed. Expected delivery: 3–5 business days.">
+              <h5 class="msg-template-title">Order Confirmation</h5>
+              <p class="msg-template-desc">
+                Your order #12345 has been confirmed and is being processed. Expected delivery: 3–5 business days. Track
+                your...
+              </p>
+            </div>
+            <div class="msg-template-item"
+              data-message="Your order #12345 has been confirmed and is being processed. Expected delivery: 3–5 business days.">
+              <h5 class="msg-template-title">Order Confirmation</h5>
+              <p class="msg-template-desc">
+                Your order #12345 has been confirmed and is being processed. Expected delivery: 3–5 business days. Track
+                your...
+              </p>
+            </div>
+            <div class="msg-template-item"
+              data-message="Your order #12345 has been confirmed and is being processed. Expected delivery: 3–5 business days.">
+              <h5 class="msg-template-title">Order Confirmation</h5>
+              <p class="msg-template-desc">
+                Your order #12345 has been confirmed and is being processed. Expected delivery: 3–5 business days. Track
+                your...
+              </p>
+            </div>
+            <div class="msg-template-item"
+              data-message="Your order #12345 has been confirmed and is being processed. Expected delivery: 3–5 business days.">
+              <h5 class="msg-template-title">Order Confirmation</h5>
+              <p class="msg-template-desc">
+                Your order #12345 has been confirmed and is being processed. Expected delivery: 3–5 business days. Track
+                your...
+              </p>
+            </div>
+            <div class="msg-template-item"
+              data-message="Your order #12345 has been confirmed and is being processed. Expected delivery: 3–5 business days.">
+              <h5 class="msg-template-title">Order Confirmation</h5>
+              <p class="msg-template-desc">
+                Your order #12345 has been confirmed and is being processed. Expected delivery: 3–5 business days. Track
+                your...
+              </p>
+            </div>
+            <div class="msg-template-item"
+              data-message="Your order #12345 has been confirmed and is being processed. Expected delivery: 3–5 business days.">
+              <h5 class="msg-template-title">Order Confirmation</h5>
+              <p class="msg-template-desc">
+                Your order #12345 has been confirmed and is being processed. Expected delivery: 3–5 business days. Track
+                your...
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-        </form>
       </div>
-      <!-- /.modal-content -->
     </div>
-    <!-- /.modal-dialog -->
   </div>
-  <!--common modal end -->
+  <!-- End of Message Templates Modal -->
+
 
   <!-- prabin added -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.min.js"></script>
@@ -1192,6 +1147,72 @@
       updateMessage(false);
 
     });
+  </script>
+
+  <script>
+    $(document).ready(function () {
+      /*** Open URL modal ***/
+      $('#openInsertUrlModal').on('click', function () {
+        $('#campaignUrlInput').val('');
+        $('#insertUrlModal').modal('show');
+      });
+
+      // Insert URL into active textarea
+      $('#insertCampaignUrlBtn').on('click', function () {
+        var url = $.trim($('#campaignUrlInput').val());
+
+        if (!url) {
+          alert('Please enter a URL');
+          return;
+        }
+
+        // Add https:// if missing
+        if (!/^https?:\/\//i.test(url)) {
+          url = 'https://' + url;
+        }
+
+        // Get active textarea (English or Nepali)
+        var $activeTextarea = $('#pills-tab-campaignMsgTypeContent .tab-pane.active textarea');
+
+        // Append URL (do not replace)
+        var existingText = $.trim($activeTextarea.val());
+        var finalText = existingText
+          ? existingText + ' ' + url
+          : url;
+
+        $activeTextarea.val(finalText).trigger('input');
+
+        $('#insertUrlModal').modal('hide');
+      });
+
+
+      /*** Open Template modal ***/
+      $('#openInsertTemplateModal').on('click', function () {
+        $('#insertTemplateModal').modal('show');
+      });
+
+      // Click template → replace textarea content
+      $('.msg-template-item').on('click', function () {
+        var templateMessage = $(this).data('message');
+
+        // Active textarea (English / Nepali)
+        var $activeTextarea = $('#pills-tab-campaignMsgTypeContent .tab-pane.active textarea');
+
+        // Replace entire content
+        $activeTextarea.val(templateMessage).trigger('input');
+
+        $('#insertTemplateModal').modal('hide');
+      });
+
+      // Search templates
+      $('#templateSearchInput').on('keyup', function () {
+        var keyword = $(this).val().toLowerCase();
+        $('.msg-template-item').each(function () {
+          $(this).toggle($(this).text().toLowerCase().indexOf(keyword) !== -1);
+        });
+      });
+    });
+
   </script>
 </body>
 

@@ -610,6 +610,54 @@
               </form>
             </div>
             <div class="campaign-segment-left-body">
+              <div class="campaign-segment-toolbar d-flex align-items-center justify-content-between">
+                <div class="dropdown filter-dropdown">
+                  <button class="dropdown-toggle d-inline-flex align-items-center" type="button"
+                    id="dropdownMenuCampaignFilter" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img class="icon-20" src="images/icon_filter.svg" alt="">
+                    <span class="dropdown-btn-text">Filters</span>
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuCampaignFilter">
+                    <div class="dropdown-header d-flex justify-content-between align-items-center">
+                      <strong>Filters</strong>
+                      <span class="dropdown-close-icon" style="cursor:pointer;">×</span>
+                    </div>
+
+                    <div class="dropdown-body">
+                      <button class="btn btn-primary collapsible-btn" type="button" data-toggle="collapse"
+                        aria-expanded="false">
+                        <span class="collapsible-btn-text">Network</span>
+                        <span class="collapsible-btn-icon">
+                          <i class="fa fa-chevron-down"></i>
+                        </span>
+                      </button>
+                      <div class="collapse collapsible-content">
+                        <div class="form-check-item">
+                          <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="">
+                            <label class="form-check-label" for="">&nbsp;All</label>
+                          </div>
+                        </div>
+                        <div class="form-check-item">
+                          <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="">
+                            <label class="form-check-label" for="">&nbsp;NTC</label>
+                          </div>
+                        </div>
+                        <div class="form-check-item">
+                          <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="">
+                            <label class="form-check-label" for="">&nbsp;Ncell</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button type="button" class="btn-icon">
+                  <img src="images/icon_sort_up.svg" alt="" />
+                </button>
+              </div>
               <div class="campaign-segment-list">
                 <div class="campaign-segment-item">
                   <div class="campaign-segment-item-head d-flex align-items-center justify-content-between">
@@ -704,7 +752,7 @@
                 <div class="tab-pane fade active" id="pills-msg-report" role="tabpanel"
                   aria-labelledby="pills-msg-report-tab">
                   <div class="msg-report-wrapper">
-                    <div class="msg-report-intro">
+                    <div class="msg-report-intro d-flex">
                       <div class="msg-report-ttl">Children Voice Campaign</div>
                       <div class="msg-report-status">Sent</div>
                     </div>
@@ -954,9 +1002,17 @@
                 <div class="tab-pane fade" id="pills-markt-report" role="tabpanel"
                   aria-labelledby="pills-markt-report-tab">
                   <div class="msg-report-wrapper">
-                    <div class="msg-report-intro">
-                      <div class="msg-report-ttl">Children Voice Campaign</div>
-                      <div class="msg-report-status">Sent</div>
+                    <div class="msg-report-intro d-flex">
+                      <div class="msg-report-intro-left">
+                        <div class="msg-report-ttl">Children Voice Campaign</div>
+                        <div class="msg-report-status">Sent</div>
+                      </div>
+                      <div class="msg-report-intro-right">
+                        <button type="button" class="btn btn-icon">
+                          <i class="fa fa-pencil"></i>
+                        </button>
+                        <button type="button" class="btn btn-deep-saffron">Rebroadcast</button>
+                      </div>
                     </div>
                     <div class="msg-report-details-block">
                       <div class="msg-report-details-head d-flex align-items-center justify-content-start">
@@ -1009,17 +1065,34 @@
                               <div class="msg-report-details-head d-flex align-items-center justify-content-start">
                                 <span class="msg-report-details-ttl">Delivery Report</span>
                               </div>
-                              <p class="msg-report-details-lead">Visualize Your Messaging Sucess and Key Metrics with Clear Insights</p>
+                              <p class="msg-report-details-lead">Visualize Your Messaging Sucess and Key Metrics with
+                                Clear Insights</p>
                               <div class="msg-report-details-body">
                                 <div class="details-card-group">
+                                  <div class="details-card-item total">
+                                    <div
+                                      class="details-card-item-info d-flex align-items-center justify-content-between">
+                                      <p class="details-card-item-label mb-0">Total</p>
+                                      <span class="details-card-item-val">2</span>
+                                    </div>
+                                  </div>
                                   <div class="details-card-item success">
-                                    <div class="details-card-item-info d-flex align-items-center justify-content-between">
+                                    <div
+                                      class="details-card-item-info d-flex align-items-center justify-content-between">
                                       <p class="details-card-item-label mb-0">Delivered</p>
                                       <span class="details-card-item-val">2</span>
                                     </div>
                                   </div>
+                                  <div class="details-card-item pending">
+                                    <div
+                                      class="details-card-item-info d-flex align-items-center justify-content-between">
+                                      <p class="details-card-item-label mb-0">Pending</p>
+                                      <span class="details-card-item-val">2</span>
+                                    </div>
+                                  </div>
                                   <div class="details-card-item error">
-                                    <div class="details-card-item-info d-flex align-items-center justify-content-between">
+                                    <div
+                                      class="details-card-item-info d-flex align-items-center justify-content-between">
                                       <p class="details-card-item-label mb-0">Failed</p>
                                       <span class="details-card-item-val">0</span>
                                     </div>
@@ -1029,47 +1102,53 @@
                             </div>
                           </div>
                           <div class="col-md-6">
-                            <div class="asms-ar-user-summary h-100">
-                              <div class="d-flex align-items-center justify-content-between">
-                                <h3 class="asms-ar-title">User Summary</h3>
-                                <span class="asms-ar-user-summary-icon text-cadet-gray">Count</span>
+                            <div class="msg-report-details-block">
+                              <div class="msg-report-details-head d-flex align-items-center justify-content-between">
+                                <span class="msg-report-details-ttl">User Summary</span>
+                                <span class="msg-report-details-text">Count</span>
                               </div>
-
-                              <div class="asms-user-summary-list d-flex flex-column">
-                                <div class="asms-user-summary-item d-flex align-items-center justify-content-between">
-                                  <div class="asms-user-summary-item-info d-flex align-items-center">
-                                    <img src=" https://stage.aakashsms.com/images/ios.svg" alt="">
-                                    <span class="asms-user-summary-item-value">IOS</span>
+                              <div class="msg-report-details-body">
+                                <div class="user-summary-list d-flex flex-column">
+                                  <div class="user-summary-item d-flex align-items-center justify-content-between">
+                                    <div class="user-summary-item-info d-flex align-items-center">
+                                      <img class="user-summary-item-icon"
+                                        src=" https://stage.aakashsms.com/images/ios.svg" alt="">
+                                      <span class="user-summary-item-value">IOS</span>
+                                    </div>
+                                    <span class="user-summary-item-count text-cadet-gray">0</span>
                                   </div>
-                                  <span class="asms-user-summary-item-count text-cadet-gray">0</span>
-                                </div>
-                                <div class="asms-user-summary-item d-flex align-items-center justify-content-between">
-                                  <div class="asms-user-summary-item-info d-flex align-items-center">
-                                    <img src=" https://stage.aakashsms.com/images/android.svg" alt="">
-                                    <span class="asms-user-summary-item-value">Android</span>
+                                  <div class="user-summary-item d-flex align-items-center justify-content-between">
+                                    <div class="user-summary-item-info d-flex align-items-center">
+                                      <img class="user-summary-item-icon"
+                                        src=" https://stage.aakashsms.com/images/android.svg" alt="">
+                                      <span class="user-summary-item-value">Android</span>
+                                    </div>
+                                    <span class="user-summary-item-count text-cadet-gray">0</span>
                                   </div>
-                                  <span class="asms-user-summary-item-count text-cadet-gray">0</span>
-                                </div>
-                                <div class="asms-user-summary-item d-flex align-items-center justify-content-between">
-                                  <div class="asms-user-summary-item-info d-flex align-items-center">
-                                    <img src=" https://stage.aakashsms.com/images/namaste.svg" alt="">
-                                    <span class="asms-user-summary-item-value">Namaste</span>
+                                  <div class="user-summary-item d-flex align-items-center justify-content-between">
+                                    <div class="user-summary-item-info d-flex align-items-center">
+                                      <img class="user-summary-item-icon"
+                                        src=" https://stage.aakashsms.com/images/namaste.svg" alt="">
+                                      <span class="user-summary-item-value">Namaste</span>
+                                    </div>
+                                    <span class="user-summary-item-count text-cadet-gray">0</span>
                                   </div>
-                                  <span class="asms-user-summary-item-count text-cadet-gray">0</span>
-                                </div>
-                                <div class="asms-user-summary-item d-flex align-items-center justify-content-between">
-                                  <div class="asms-user-summary-item-info d-flex align-items-center">
-                                    <img src="https://stage.aakashsms.com/images/ncell.svg" alt="">
-                                    <span class="asms-user-summary-item-value">Ncell</span>
+                                  <div class="user-summary-item d-flex align-items-center justify-content-between">
+                                    <div class="user-summary-item-info d-flex align-items-center">
+                                      <img class="user-summary-item-icon"
+                                        src="https://stage.aakashsms.com/images/ncell.svg" alt="">
+                                      <span class="user-summary-item-value">Ncell</span>
+                                    </div>
+                                    <span class="user-summary-item-count text-cadet-gray">0</span>
                                   </div>
-                                  <span class="asms-user-summary-item-count text-cadet-gray">0</span>
-                                </div>
-                                <div class="asms-user-summary-item d-flex align-items-center justify-content-between">
-                                  <div class="asms-user-summary-item-info d-flex align-items-center">
-                                    <img src=" https://stage.aakashsms.com/images/other.svg" alt="">
-                                    <span class="asms-user-summary-item-value">Other</span>
+                                  <div class="user-summary-item d-flex align-items-center justify-content-between">
+                                    <div class="user-summary-item-info d-flex align-items-center">
+                                      <img class="user-summary-item-icon"
+                                        src=" https://stage.aakashsms.com/images/other.svg" alt="">
+                                      <span class="user-summary-item-value">Other</span>
+                                    </div>
+                                    <span class="user-summary-item-count text-cadet-gray">0</span>
                                   </div>
-                                  <span class="asms-user-summary-item-count text-cadet-gray">0</span>
                                 </div>
                               </div>
                             </div>
@@ -1077,49 +1156,49 @@
                         </div>
                       </div>
 
-                      <div class="asms-ar-tbl mt-4 d-flex flex-column">
+                      <div class="asms-ar-tbl d-flex flex-column">
                         <div class="asms-ar-tbl-search d-flex justify-content-end align-items-center ml-auto">
-                          <i class="fas fa-search"></i>
+                          <i class="fa fa-search"></i>
                           <input type="text" id="asms-ar-tbl-search-input" class="asms-ar-tbl-search-input form-control"
                             name="search" placeholder="Search Here...">
                         </div>
 
-                        <div class="table-wrapper mt-4 table-head-active">
-                          <table class="table report-table">
-                            <thead class="position-relative">
-                              <tr>
-                                <th>Phone</th>
-                                <th>Total Clicks</th>
-                                <th>First Clicked At</th>
-                                <th>Last Clicked At</th>
-                              </tr>
-                            </thead>
-                            <tbody class="invisible">
-                              <tr>
-                                <td>98765675432</td>
-                                <td>1</td>
-                                <td>Fri Feb 05 2025</td>
-                                <td>Fri Feb 05 2025</td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-
-                        <div class="table-wrapper table-body-active">
-                          <table class="table report-table">
-                            <thead class="invisible">
-                              <tr>
-                                <th>Phone</th>
-                                <th>Total Clicks</th>
-                                <th>First Clicked At</th>
-                                <th>Last Clicked At</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-
-                            </tbody>
-                          </table>
-                        </div>
+                        <table class="table table-striped table-bordered table-hover no-footer" id="" role="grid">
+                          <thead>
+                            <tr>
+                              <th>Phone</th>
+                              <th>Total Clicks</th>
+                              <th>First Clicked At</th>
+                              <th>Last Clicked At</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>98765675432</td>
+                              <td>1</td>
+                              <td>Fri Feb 05 2025</td>
+                              <td>Fri Feb 05 2025</td>
+                            </tr>
+                            <tr>
+                              <td>98765675432</td>
+                              <td>1</td>
+                              <td>Fri Feb 05 2025</td>
+                              <td>Fri Feb 05 2025</td>
+                            </tr>
+                            <tr>
+                              <td>98765675432</td>
+                              <td>1</td>
+                              <td>Fri Feb 05 2025</td>
+                              <td>Fri Feb 05 2025</td>
+                            </tr>
+                            <tr>
+                              <td>98765675432</td>
+                              <td>1</td>
+                              <td>Fri Feb 05 2025</td>
+                              <td>Fri Feb 05 2025</td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </div>
                   </div>
@@ -1340,7 +1419,64 @@
         $('.campaign-segment-msg-details').show();
       })
     });
+
+
+    // Prevent dropdown from closing when clicking inside menu
+    $('.filter-dropdown .dropdown-menu').on('click', function (e) {
+      e.stopPropagation();
+    });
+
+    // Close dropdown on cancel icon click
+    $('.filter-dropdown').on('click', '.dropdown-close-icon', function () {
+      $(this).closest('.dropdown').removeClass('open');
+    });
+
+    // Close dropdown only when clicking outside
+    $(document).on('click', function (e) {
+      var $dropdown = $('.filter-dropdown');
+      var $dropdownCloseBtn = $('.dropdown-close-icon');
+
+      if (!$dropdown.is(e.target) && $dropdown.has(e.target).length === 0) {
+        $dropdown.removeClass('open');
+      }
+      $($dropdownCloseBtn).on('click', function () {
+        $dropdown.removeClass('open');
+      });
+    });
+
+    // dropdown collapsbile
+    var $btn = $("#toggleCollapsibleBtn");
+    var $collapse = $("#collapseDropdown");
+
+    $btn.click(function () {
+      $collapse.collapse('toggle'); // Use Bootstrap 3 collapse method
+    });
+
+    $(".collapsible-btn").each(function (index) {
+      var $btn = $(this);
+      var $collapse = $(".collapsible-content").eq(index);
+      var $icon = $btn.find(".collapsible-btn-icon i");
+
+      // Toggle the collapse on button click
+      $btn.click(function () {
+        $collapse.collapse('toggle');
+      });
+
+      // Rotate icon when shown
+      $collapse.on('shown.bs.collapse', function () {
+        $btn.attr('aria-expanded', 'true');
+        $icon.addClass('rotate-180');
+      });
+
+      // Reset icon when hidden
+      $collapse.on('hidden.bs.collapse', function () {
+        $btn.attr('aria-expanded', 'false');
+        $icon.removeClass('rotate-180');
+      });
+    });
+
   </script>
+
 </body>
 
 </html>
