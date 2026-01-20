@@ -1,3 +1,11 @@
+.bg-bright-fern{
+  background: #37a000!important;
+}
+.modal-header .close{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .campaign-segment {
   display: grid;
   grid-template-columns: 380px auto;
@@ -21,6 +29,7 @@
   height: 36px;
   min-width: 72px;
   text-align: center;
+  background: #37a000!important;
 }
 .campaign-item-date {
   text-align: right;
@@ -111,8 +120,8 @@
   font-size: 13px;
 }
 .msg-report-status.status-success{
-  background: rgba(16, 140, 127, 0.2);
-  color: #108c7f;
+  background: rgba(55, 160, 0, 0.2);
+  color: #37a000;
 }
 .msg-report-status.status-warning{
   background: rgba(255, 145, 1, 0.2);
@@ -193,10 +202,10 @@
   border-radius: 8px;
 }
 .details-card-item.success {
-  background: rgba(16, 140, 127, 0.2);
+  background: rgba(55, 160, 0, 0.2);
 }
 .details-card-item.error {
-  background: rgba(254, 226, 226, 0.2);
+  background: rgba(237, 47, 47, 0.2);
 }
 .details-card-item.pending{
   background: rgba(255, 145, 1, 0.2);
@@ -230,6 +239,12 @@
 .msg-report-intro{
   justify-content: space-between;
   align-items: flex-start;
+}
+.msg-report-intro-left{
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
 }
 .details-list-item-longtext {
   margin-top: 8px;
@@ -280,8 +295,8 @@
   font-weight: 500;
 }
 .status-badge.status-delivered {
-  background: rgba(16, 140, 127, 0.2);
-  color: #108c7f;
+  background: rgba(55, 160, 0, 0.1);
+  color: #37a000;
 }
 .btn:active:focus,
 .btn:focus {
@@ -688,7 +703,7 @@
   font-weight: 600;
 }
 .text-dark-cyan{
-  color: #108c7f;
+  color: #37a000;
 }
 .asms-ar-metrics{
   display: grid;
@@ -836,6 +851,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.campaign-pagination{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.asms-ar-tbl-datatable{
+  margin-bottom: 0!important;
 }
 
 @media(max-width: 1599.98px){
