@@ -3,6 +3,7 @@
   grid-template-columns: 380px auto;
   gap: 20px;
   align-items: flex-start;
+  margin-top: 20px!important;
 }
 .campaign-segment-left-head {
   padding: 16px;
@@ -65,30 +66,35 @@
   overflow-y: scroll;
 }
 .campaign-segment-tab {
-  background: rgba(0, 0, 0, 0.05);
+  background: #eeeeee;
   border-radius: 8px;
-  padding: 8px 0;
+  padding: 7px 0;
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 24px;
 }
+.campaign-segment-tab .nav-item{
+  flex: 1;
+  text-align: center;
+}
 .campaign-segment-tab .nav-item .nav-link {
   color: #333;
-  background: #fff;
-  padding: 8px 20px;
+  /* background: #fff; */
+  padding: 10px 20px;
   font-weight: 500;
   font-size: 15px;
   border: 0;
   border-radius: 4px;
+  opacity: 0.6;
 }
 .campaign-segment-tab .nav-item.active .nav-link {
   /* background: #f99000; */
-  background: #272b35;
-  font-weight: 700;
-  color: #fff;
+  background: #fff;
+  color: #333;
   border: 0;
+  opacity: 1;
 }
 
 /* tabs */
@@ -130,10 +136,13 @@
   font-weight: 600;
   font-size: 16px;
 }
+#pills-tab-campaignMsgType{
+  max-width: 360px;
+}
 .msg-report-details-block {
   padding: 24px;
   border-radius: 12px;
-  border: 1px solid #d2d6de;
+  border: 1px solid #e5e5e5;
   background: #fff;
 }
 .details-list-group {
@@ -162,7 +171,7 @@
   opacity: 0.7;
   font-size: 12px;
   font-weight: 500;
-  margin-bottom: 2px !important;
+  margin-bottom: 4px !important;
 }
 .details-list-item-val {
   font-weight: 600;
@@ -242,6 +251,8 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  font-size: 16px;
+  padding: 10px 20px;
 }
 .btn-deep-saffron:hover,
 .btn-deep-saffron:focus {
@@ -640,6 +651,7 @@
   align-items: flex-start;
   gap: 24px;
   grid-template-columns: auto minmax(300px, auto);
+  margin-top: 20px!important;
 }
 .campaign-create-segment-right{
   display: flex;
@@ -790,7 +802,41 @@
   height: 34px;
   padding: 0 12px;
 }
+.campaign-create-schedule-block{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.campaign-create-schedule-block .campaign-segment-tab .nav-item .nav-link{
+  padding: 2px 8px;
+}
+.campaign-create-schedule-block .campaign-segment-tab{
+  margin-bottom: 0;
+  display: block;
+  padding: 6px;
+}
+.campaign-create-schedule-block .input-group{
+  flex: 1;
+}
 
+#campaignPreviewModal .modal-dialog{
+  max-width: 1000px!important;
+  width: 100%!important;
+}
+#campaignPreviewModal .msg-report-details-block{
+  padding: 20px;
+}
+.msg-report-details-block-group{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  align-items: flex-start;
+}
+#campaignPreviewModal .double-sided-buttons{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
 @media(max-width: 1599.98px){
   .campaign-segment{
@@ -828,6 +874,12 @@
   }
   .campaign-segment-list{
     max-height: 400px!important;
+  }
+}
+
+@media(max-width: 767.98px){
+  .msg-report-details-block-group{
+    grid-template-columns: 100%;
   }
 }
 
